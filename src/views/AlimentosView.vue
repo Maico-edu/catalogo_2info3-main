@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 import { listaProdutos } from '@/data/produtos';
 import { formataPreco } from '@/utils/produtoUtils';
+import produtoCard from '@/components/produtoCard.vue';
+
 const produtos = ref(listaProdutos)
 produtos.value = produtos.value.filter(p => p.categoria === 'Alimentos');
 
@@ -11,15 +13,10 @@ produtos.value = produtos.value.filter(p => p.categoria === 'Alimentos');
     <div class="container">
         <h1>Alimentos</h1>
         <div class="produtos">
-            <div v-for="produto in produtos" :key="produto.id" class="produto-card">
-                <div>
-                    <h2>{{ produto.nome }}</h2>
-                    <P>Preço: {{ formataPreco(produto.preco) }}</P>
-                </div>
-                <div>
-                    <img :src="produto.imagem" :alt="produto.nome" class="produto-imagem">
-                </div>
-            </div>
+            <produto-card v-for="produto in produtos" :key="produtos.id" :id="produto.id" :nome="produto.nome" 
+            :preco="produto.preco" :categoria="produto.categoria" :imagem="produto.imagem">
+
+            </produto-card>
         </div>
     </div>
 </template>

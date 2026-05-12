@@ -3,12 +3,10 @@
 </script>
 
 <template>
-  <header>
-    <router-link to="/">Home</router-link>
-    <router-link to="/alimentos">Alimentos</router-link>
-    <router-link to="/higiene">Higiene</router-link>
-    <router-link to="/brinquedos">Brinquedos</router-link>
-  </header>
+  <h1> Catalogo de Produtos</h1>
+  <p>
+    Use o menu para navegar entre os produtos que pertencem ao nosso catálogo
+  </p>
 </template>
 
 <style scoped>
